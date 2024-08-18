@@ -1,0 +1,90 @@
+
+<html>
+<head>
+    <title>IMAGE SLIDER</title>
+    <link rel="stylesheet" href="slider.css">
+</head>
+<body>
+    <center>
+        <br><br><br>
+    <h1><font style="fantasy"></font>RESPONSIVE IMAGE SLIDER</h1>
+
+    <div id="img_container"></div>
+
+
+    <img src="C:\Users\Maryam's PC\Desktop\websites\slider\images\prev.png" height="30" width="30" id="p" onclick="previous()">
+    <img src="C:\Users\Maryam's PC\Desktop\websites\slider\images\1.jpg" id="m" height="300" width="500" border="2">
+    <img src="C:\Users\Maryam's PC\Desktop\websites\slider\images\next.png" height="30" width="30" id="n" onclick="forward()"><br><br>
+    <img src="C:\Users\Maryam's PC\Desktop\websites\slider\images\2.jpg" height="70" width="70" border="2" onclick="change(1)">
+    <img src="C:\Users\Maryam's PC\Desktop\websites\slider\images\3.jpg" height="70" width="70" border="2" onclick="change(2)">
+    <img src="C:\Users\Maryam's PC\Desktop\websites\slider\images\4.jpg" height="70" width="70" border="2" onclick="change(3)">
+    <img src="C:\Users\Maryam's PC\Desktop\websites\slider\images\5.jpg" height="70" width="70" border="2" onclick="change(4)">
+    <img src="C:\Users\Maryam's PC\Desktop\websites\slider\images\6.jpg" height="70" width="70" border="2" onclick="change(5)">
+    <img src="C:\Users\Maryam's PC\Desktop\websites\slider\images\7.jpg" height="70" width="70" border="2" onclick="change(6)">
+    <img src="C:\Users\Maryam's PC\Desktop\websites\slider\images\8.jpg" height="70" width="70" border="2" onclick="change(7)">
+    <img src="C:\Users\Maryam's PC\Desktop\websites\slider\images\9.jpg" height="70" width="70" border="2" onclick="change(8)">
+
+
+    </div>
+    
+    </center>
+    <script>
+        var img = new Array();
+        img[0] = "C:\Users\Maryam's PC\Desktop\websites\slider\images\1.jpg";
+        img[1] = "C:\Users\Maryam's PC\Desktop\websites\slider\images\2.jpg";
+        img[2] = "C:\Users\Maryam's PC\Desktop\websites\slider\images\3.jpg";
+        img[3] = "C:\Users\Maryam's PC\Desktop\websites\slider\images\4.jpg";
+        img[4] = "C:\Users\Maryam's PC\Desktop\websites\slider\images\5.jpg";
+        img[5] = "C:\Users\Maryam's PC\Desktop\websites\slider\images\6.jpg";
+        img[6] = "C:\Users\Maryam's PC\Desktop\websites\slider\images\7.jpg";
+        img[7] = "C:\Users\Maryam's PC\Desktop\websites\slider\images\8.jpg";
+        img[8] = "C:\Users\Maryam's PC\Desktop\websites\slider\images\9.jpg";
+        var a=0;
+        function change(x)
+        {
+            a=x;
+            document.getElementById("m").src=img[a];
+        }
+        function previous()
+        {
+            if(a<=0)
+            {
+                a=8;
+                document.getElementById("m").src=img[a];
+                
+               
+            }
+            else
+            {
+                a--;
+                document.getElementById("m").src=img[a];
+
+               
+            }
+        }
+
+        function forward()
+        {
+            if(a>=8)
+            {
+                a=0;
+                document.getElementById("m").src=img[a];
+                
+               
+            }
+            else
+            {
+                a++;
+                document.getElementById("m").src=img[a];
+
+               
+            }
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

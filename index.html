@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="slider.css">
+</head>
+<body>
+    <center>
+        <h1><font style="fantasy">Responsive Image Slider</font></h1>
+
+        <div id="img_container">
+            <!-- Navigation buttons -->
+            <img src="images/prev.png" height="30" width="30" id="p" onclick="previous()" alt="Previous">
+            <img src="images/1.jpg" id="m" height="300" width="500" border="2" alt="Main Image">
+            <img src="images/next.png" height="30" width="30" id="n" onclick="forward()" alt="Next"><br><br>
+            <!-- Thumbnails -->
+            <img src="images/2.jpg" height="70" width="70" border="2" onclick="change(1)" alt="Thumbnail 1">
+            <img src="images/3.jpg" height="70" width="70" border="2" onclick="change(2)" alt="Thumbnail 2">
+            <img src="images/4.jpg" height="70" width="70" border="2" onclick="change(3)" alt="Thumbnail 3">
+            <img src="images/5.jpg" height="70" width="70" border="2" onclick="change(4)" alt="Thumbnail 4">
+            <img src="images/6.jpg" height="70" width="70" border="2" onclick="change(5)" alt="Thumbnail 5">
+            <img src="images/7.jpg" height="70" width="70" border="2" onclick="change(6)" alt="Thumbnail 6">
+            <img src="images/8.jpg" height="70" width="70" border="2" onclick="change(7)" alt="Thumbnail 7">
+            <img src="images/9.jpg" height="70" width="70" border="2" onclick="change(8)" alt="Thumbnail 8">
+        </div>
+    </center>
+
+    <script>
+        // Array to hold the image paths
+        var img = [
+            "images/1.jpg",
+            "images/2.jpg",
+            "images/3.jpg",
+            "images/4.jpg",
+            "images/5.jpg",
+            "images/6.jpg",
+            "images/7.jpg",
+            "images/8.jpg",
+            "images/9.jpg"
+        ];
+
+        var currentIndex = 0;
+
+        // Function to change the main image to the clicked thumbnail
+        function change(index) {
+            currentIndex = index;
+            document.getElementById("m").src = img[currentIndex];
+        }
+
+        // Function to show the previous image
+        function previous() {
+            if (currentIndex <= 0) {
+                currentIndex = img.length - 1;
+            } else {
+                currentIndex--;
+            }
+            document.getElementById("m").src = img[currentIndex];
+        }
+
+        // Function to show the next image
+        function forward() {
+            if (currentIndex >= img.length - 1) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
+            document.getElementById("m").src = img[currentIndex];
+        }
+    </script>
+</body>
+</html>
